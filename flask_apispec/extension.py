@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import types
-
+import json
 import flask
 from apispec import APISpec
 
@@ -65,7 +65,8 @@ class FlaskApiSpec(object):
         return flask.jsonify(self.spec.to_dict())
 
     def swagger_ui(self):
-        return flask.render_template('swagger-ui.html')
+        options = self.app.config.get('APISPEC_SWAGGER_UI_OPTIONS', {})
+        return flask.render_template('swagger-ui.html',options=json.dumps(options))
 
     def register(self, target, endpoint=None, blueprint=None):
         if isinstance(target, types.FunctionType):

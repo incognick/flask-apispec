@@ -45,4 +45,9 @@ output/*/index.html
 docs/_build
 README.html
 
+# virtualenv
+include
+local
+pip-selfcheck.json
+
 _sandbox
