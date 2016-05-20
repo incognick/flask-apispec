@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-__version__ = '0.3.2'
+__version__ = '0.3.3'
 
 from flask_apispec.views import ResourceMeta, MethodResource
 from flask_apispec.annotations import doc, wrap_with, use_kwargs, marshal_with
