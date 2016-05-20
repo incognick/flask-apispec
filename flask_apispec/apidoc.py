@@ -64,7 +64,7 @@ class Converter(object):
         options = copy.copy(args.get('kwargs', {}))
         locations = options.pop('locations', None)
         if locations:
-            options['default_in'] = locations[0]
+            options['default_in'] = locations[0] if locations[0] != 'json' else 'body'
         return converter(
             args.get('args', {}),
             dump=False,
